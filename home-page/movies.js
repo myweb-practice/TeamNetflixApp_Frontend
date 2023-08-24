@@ -19,7 +19,7 @@
     {
       year: '1999-2222',
       rating: '5.5',
-      time: '131 min',
+      genres: '',
       title: 'Stranger Things'
     },
   ];
@@ -54,7 +54,7 @@
 
       const timeSpan = document.createElement('span');
       timeSpan.classList.add('time');
-      timeSpan.textContent = item.time;
+      timeSpan.textContent = item.genres;
       radialSpan.appendChild(timeSpan);
 
       cardLink.appendChild(radialSpan);
@@ -81,7 +81,7 @@
     method: 'GET',
     headers: {
       'User-Agent': 'khalid',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyY2hhbmEyMyIsImRhdGUiOjE2OTI4Njk0MzY4MDMsImlhdCI6MTY5Mjg2OTQzNiwiZXhwIjoxNjkyODczMDM2fQ.7PKTI2C6U-UlMI3B3F7K5pHBBAFND0dgqz3R5rkpC6M'
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyY2hhbmEyMyIsImRhdGUiOjE2OTI4NzU1NTE3NjAsImlhdCI6MTY5Mjg3NTU1MSwiZXhwIjoxNjkyODc5MTUxfQ.tjK2K80u5n48PKkTnjaP6u51SA3tAcnh9KYqFkYtk8k'
     }
   };
   
