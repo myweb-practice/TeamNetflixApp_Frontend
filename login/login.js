@@ -1,61 +1,44 @@
-const [username, password, submit, checkbox] = document.querySelectorAll('input');
+const [username, password, submit, checkbox] =
+  document.querySelectorAll("input");
 
- 
+submit.addEventListener("click", async (e) => {
+  const userData = {
+    username: username.value,
 
-submit.addEventListener('click', async (e) => {
+    password: password.value,
+  };
 
-    const userData = {
+  console.log(userData);
 
-        username: username.value,
+  const options = {
+    method: "POST",
 
-        password: password.value,
+    headers: { "Content-Type": "application/json" },
 
-   
+    body: JSON.stringify(userData),
+  };
 
-    };
+  try {
+    const response = await fetch(
+      "https://movie-backend-qq9a.onrender.com/users/login",
+      options
+    );
 
-    console.log(userData);
+    const responseData = await response.json();
 
- 
+    console.log(responseData);
 
-    const options = {
+    // Store the user data in local storage if needed
 
-        method: 'POST',
+    localStorage.setItem("token", JSON.stringify(responseData));
 
-        headers: { 'Content-Type': 'application/json' },
+    localStorage.setItem("username", username.value);
 
-        body: JSON.stringify(userData),
-
-    };
-
- 
-
-    try {
-
-        const response = await fetch('https://movie-backend-qq9a.onrender.com/users/login', options);
-
-        const responseData = await response.json();
-
-        console.log(responseData);
-
- 
-
-        // Store the user data in local storage if needed
-
-        localStorage.setItem('token', JSON.stringify(responseData));
-
-        localStorage.setItem('username',username.value);
-        
-
-        // Redirect to the home page
-
-
-    } catch (error) {
-
-        console.error(error);
-
+    // Redirect to the home page
+    if (response.status === 200) {
+      window.location.href = "../home-page/index.html";
     }
-
+  } catch (error) {
+    console.error(error);
+  }
 });
-
- 
