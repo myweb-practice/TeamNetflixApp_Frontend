@@ -1,19 +1,3 @@
-// TweenMax.staggerTo('.movie', 1, {
-//     css: {
-//       opacity: 1,
-//       transform: 'translateY(0)'
-//     }
-  
-//   }, 0.2);
-  
-//   TweenMax.staggerTo('.movie__title', 1, {
-//     css: {
-//       opacity: 1,
-//       transform: 'translateX(0)'
-//     }
-//   }, 0.2)
-
-
 
   const items = [
     {
@@ -28,7 +12,13 @@
   function generateCards(data) {
     const parentContainer = document.getElementById('parent-container');
 
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row', 'row-cols-1', 'row-cols-md-3', 'g-4');
+
     data.forEach(item => {
+      const colDiv = document.createElement('div');
+      colDiv.classList.add('col','d-flex', 'justify-content-center');
+
       const cardLink = document.createElement('a');
       cardLink.classList.add('card');
       cardLink.href = '#';
@@ -41,10 +31,13 @@
       yearSpan.textContent = item.year;
       infoDiv.appendChild(yearSpan);
 
-      const ratingSpan = document.createElement('span');
-      ratingSpan.classList.add('rating');
-      ratingSpan.textContent = item.rating;
-      infoDiv.appendChild(ratingSpan);
+
+//// rating is extra info makes the card looks bad so i commented until i'll fix it //////
+
+      // const ratingSpan = document.createElement('span');
+      // ratingSpan.classList.add('rating');
+      // ratingSpan.textContent = item.rating;
+      // infoDiv.appendChild(ratingSpan);
 
       cardLink.appendChild(infoDiv);
 
@@ -65,13 +58,14 @@
 
       cardLink.appendChild(titleDiv);
 
-      parentContainer.appendChild(cardLink);
+      colDiv.appendChild(cardLink)
+      rowDiv.appendChild(colDiv)
+
+
+
     });
+    parentContainer.appendChild(rowDiv);
   }
-
-
-  // Call the function with the sample data
-  // generateCards(items);
 
 
 
@@ -80,10 +74,11 @@
   const options = {
     method: 'GET',
     headers: {
-      'User-Agent': 'khalid',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyY2hhbmEyMyIsImRhdGUiOjE2OTI4NzU1NTE3NjAsImlhdCI6MTY5Mjg3NTU1MSwiZXhwIjoxNjkyODc5MTUxfQ.tjK2K80u5n48PKkTnjaP6u51SA3tAcnh9KYqFkYtk8k'
+      "Content-Type": "application/json",
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyY2hhbmEyMyIsImRhdGUiOjE2OTI5NjE3MjkzNTgsImlhdCI6MTY5Mjk2MTcyOSwiZXhwIjoxNjkyOTY1MzI5fQ.OoQ_ZKZbjvZe51ysFdtl-S4srJ82I0wKOq818R41n5g'
     }
   };
+  console.log(options);
   
   fetch('https://movie-backend-qq9a.onrender.com/movies', options)
     .then(response => response.json())
@@ -92,8 +87,3 @@
       generateCards(response)
     })
     .catch(err => console.error(err));
-
-
-///1-front end routing 
-///2- fetching movies from db 
-///3-
