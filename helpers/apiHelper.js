@@ -13,8 +13,8 @@ export async function fetchMoviesCatalog() {
     //
     try {
       const response = await fetch(
-        // "https://movie-backend-qq9a.onrender.com/movies",
-        "http://localhost:8181/movies",
+        "https://movie-backend-qq9a.onrender.com/movies",
+        // "http://localhost:8181/movies",
         options
       );
       if (response.status === 401) {
