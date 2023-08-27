@@ -25,3 +25,28 @@ a {
 .nav-link:hover {
   color: #5f3b3b;
 }
+
+.genre-link {
+  color: white;
+  font-size: 28px;
+}
+
+.genre-link:hover {
+  color: crimson;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Distributes space between the buttons */
+  align-items: center; /* Centers the buttons vertically */
+  margin: 10px 0; /* Adjust the margin as needed */
+}
+
+/* Style the buttons */
+.button-container button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

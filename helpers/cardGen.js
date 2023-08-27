@@ -3,15 +3,16 @@ export { createAndAppendCardList, createCard };
 // container example: const container = document.getElementById("container");
 function createAndAppendCardList(movies, container) {
   movies.forEach((movie) => {
-    console.log(movie);
+    // console.log(movie);
     container.appendChild(createCard(movie));
   });
 }
 
 // Dynamically creates one card
 function createCard(movie) {
-  const card = document.createElement("a");
+  const card = document.createElement("img");
   card.classList.add("card");
+  card.src = movie.image_url;
   card.href = "#";
 
   const infoDiv = document.createElement("div");

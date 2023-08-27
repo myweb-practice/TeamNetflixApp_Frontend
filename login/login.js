@@ -1,5 +1,6 @@
 const [username, password, submit, checkbox] =
   document.querySelectorAll("input");
+const content = document.querySelector(".content");
 
 submit.addEventListener("click", async (e) => {
   const userData = {
@@ -7,8 +8,6 @@ submit.addEventListener("click", async (e) => {
 
     password: password.value,
   };
-
-  console.log(userData);
 
   const options = {
     method: "POST",
@@ -20,7 +19,8 @@ submit.addEventListener("click", async (e) => {
 
   try {
     const response = await fetch(
-      "https://movie-backend-qq9a.onrender.com/users/login",
+      // "https://movie-backend-qq9a.onrender.com/users/login",
+      "http://localhost:8181/users/login",
       options
     );
 
@@ -37,6 +37,8 @@ submit.addEventListener("click", async (e) => {
     // Redirect to the home page
     if (response.status === 200) {
       window.location.href = "../home-page/index.html";
+    } else {
+      alert("Login or password is incorrect");
     }
   } catch (error) {
     console.error(error);
