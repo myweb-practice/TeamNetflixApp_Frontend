@@ -19,19 +19,16 @@ submit.addEventListener("click", async (e) => {
 
   try {
     const response = await fetch(
-      "https://movie-backend-qq9a.onrender.com/users/login",
+      "https://teamnetflixapp-backend.onrender.com/users/login",
       // "http://localhost:8181/users/login",
       options
     );
 
     const responseData = await response.json();
-
     console.log(responseData);
 
     // Store the user data in local storage if needed
-
     localStorage.setItem("token", JSON.stringify(responseData));
-
     localStorage.setItem("username", username.value);
 
     // Redirect to the home page

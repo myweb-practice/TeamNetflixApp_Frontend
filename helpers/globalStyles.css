@@ -41,6 +41,11 @@
     }
   }
 
+  .card-image {
+    width: 100%;
+    height: inherit;
+  }
+
   .info {
     position: absolute;
     width: 100%;
