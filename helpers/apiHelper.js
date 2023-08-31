@@ -13,7 +13,7 @@ export async function fetchMoviesCatalog() {
     //
     try {
       const response = await fetch(
-        "https://movie-backend-qq9a.onrender.com/movies",
+        "https://teamnetflixapp-backend.onrender.com/movies",
         // "http://localhost:8181/movies",
         options
       );
@@ -41,7 +41,9 @@ export async function fetchMoviesByGenre(genre) {
     };
     try {
       const response = await fetch(
-        `http://localhost:8181/movies/genres/${encodeURIComponent(genre)}`,
+        `https://teamnetflixapp-backend.onrender.com/movies/genres/${encodeURIComponent(
+          genre
+        )}`,
         options
       );
       if (response.status === 401) {

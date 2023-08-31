@@ -1,59 +1,42 @@
-const [username, email, password, submit, checkbox] = document.querySelectorAll('input');
+const [username, email, password, submit, checkbox] =
+  document.querySelectorAll("input");
 
- 
+submit.addEventListener("click", async (e) => {
+  Swal.fire("You are Succesfully registered");
+  const userData = {
+    username: username.value,
+    email: email.value,
+    password: password.value,
+  };
 
-submit.addEventListener('click', async (e) => {
-    Swal.fire('You are Succesfully registered' )
-    const userData = {
+  console.log(userData);
 
-        username: username.value,
-        email: email.value,
-        password: password.value,
+  const options = {
+    method: "POST",
 
-   
+    headers: { "Content-Type": "application/json" },
 
-    };
+    body: JSON.stringify(userData),
+  };
 
-    console.log(userData);
+  try {
+    const response = await fetch(
+      "https://teamnetflixapp-backend.onrender.com/users/register",
+      options
+    );
 
- 
+    const responseData = await response.json();
 
-    const options = {
+    console.log(responseData);
 
-        method: 'POST',
+    // Store the user data in local storage if needed
 
-        headers: { 'Content-Type': 'application/json' },
+    localStorage.setItem("token", JSON.stringify(responseData));
 
-        body: JSON.stringify(userData),
+    localStorage.setItem("username", username.value);
 
-    };
-
- 
-
-    try {
-
-        const response = await fetch('https://movie-backend-qq9a.onrender.com/users/register', options);
-
-        const responseData = await response.json();
-
-        console.log(responseData);
-
- 
-
-        // Store the user data in local storage if needed
-
-        localStorage.setItem('token', JSON.stringify(responseData));
-
-        localStorage.setItem('username',username.value);
-        
-
-        // Redirect to the home page
-
-
-    } catch (error) {
-
-        console.error(error);
-
-    }
-
+    // Redirect to the home page
+  } catch (error) {
+    console.error(error);
+  }
 });
