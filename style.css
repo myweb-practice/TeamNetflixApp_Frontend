@@ -46,7 +46,7 @@ img {
 	width: 100%;
 	height: 93vh;
 	position: relative;
-	background: url('/login/images/netflix.jpg') no-repeat center center/cover;
+	background: url('../TeamNetflixApp_Frontend//login/images/netflix.jpg') no-repeat center center/cover;
 }
 
 .showcase::after {
