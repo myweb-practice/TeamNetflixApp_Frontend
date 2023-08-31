@@ -35,6 +35,12 @@ submit.addEventListener("click", async (e) => {
     localStorage.setItem("username", username.value);
 
     // Redirect to the home page
+<<<<<<< HEAD
+=======
+    if (response.status === 200) {
+      window.location.href = "../home-page/index.html";
+    }
+>>>>>>> 8a905cbeaf70f61dc312a94d84d2b133c3a40fa5
   } catch (error) {
     console.error(error);
   }
