@@ -1,5 +1,6 @@
 import { fetchMoviesCatalog } from "../helpers/apiHelper.js";
 import { createAndAppendCardList } from "../helpers/cardGen.js";
+import handleScroll from "../helpers/scrollingButton.js";
 
 const parentContainer = document.getElementById("parent-container");
 
@@ -30,3 +31,5 @@ btnLogout.addEventListener("click", () => {
 
   window.location.href = "../login/index.html";
 });
+
+handleScroll();

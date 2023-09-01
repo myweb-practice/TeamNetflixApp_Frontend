@@ -30,7 +30,6 @@ submit.addEventListener("click", async (e) => {
 
     // Store the user data in local storage if needed
 
-    
     localStorage.setItem("token", JSON.stringify(responseData));
     localStorage.setItem("username", username.value);
 

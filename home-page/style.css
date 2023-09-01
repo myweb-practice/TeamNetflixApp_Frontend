@@ -1,167 +1,177 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: radial-gradient(circle, rgb(199, 64, 64) 0%, rgb(36, 33, 33) 45%);
-        color: rgba(#fff,.7);
-      
-  }
+  font-family: "Open Sans", sans-serif;
+  background: rgba(0, 0, 0, 0.9);
+  color: rgba(#fff, 0.7);
+}
 
-  a {
-    text-decoration: none;
-    /* color: #b9acac !important; */
-  }
+a {
+  text-decoration: none;
+}
 
-  .text, .nav-link {
-    color: #fff;
-  }
+/* NavBar */
+.navbar-brand {
+  color: #dc2b2c !important;
+  padding-right: 50px !important;
+  font-weight: 700;
+  font-size: 35px;
+}
 
-  .nav-link:hover  {
-    color: #5f3b3b; 
-  }
-  
-  .movieCard {
-    display: flex;
-    margin: 1rem auto;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    grid-row: 10rem;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    color: #e6e6e6 !important;
-    display: inline-block;
-    position: relative;
-    width: 210px;
-    height: 310px;
-    background: url('https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg') no-repeat center/cover;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px 0 rgba(black,.5);
-    transition: .5s;
-    overflow: hidden;
-    margin: 5px;
-  
-    &:hover {
-      transition: .5s;
-      .info {
-        padding-top: 20px;
-        opacity: 1;
-        transition: .5s;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-      }
-      .title {
-        padding-bottom: 50px;
-        opacity: 1;
-        transition: .5s;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-      }
-      .hvr-radial-out {
-        &:before {
-          transform: scale(2 , 2);
-        }
-        i,
-        .time {
-          opacity: 1;
-        }
-      }
-    }
-  
+.navbar-toggler {
+  color: #9f9f9f;
+}
+.navbar-toggler-icon {
+  background-color: #444343;
+  border-radius: 3px;
+}
+
+.text,
+.nav-link {
+  color: #efeaea;
+  font-weight: 500;
+  padding-top: 15px;
+}
+
+.nav-link:hover {
+  color: #dc2b2c;
+  font-size: 15px;
+}
+/*End NavBar */
+
+/* Cards */
+.card-image {
+  width: 100%;
+  height: inherit;
+}
+
+.card {
+  color: #e6e6e6 !important;
+  display: flex;
+  position: relative;
+  width: 210px;
+  height: 310px;
+  background: url("https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg")
+    no-repeat center/cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 0 rgba(rgb(243, 239, 239), 0.5);
+  transition: 0.5s;
+  overflow: hidden;
+  margin: 5px;
+
+  &:hover {
+    transition: 0.5s;
     .info {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      font-size: 14px;
-      font-weight: 300;
-      padding: 0;
-      background: linear-gradient(to bottom, #000, transparent);
-      text-transform: uppercase;
-      opacity: 0;
-      transition: .5s;
-      z-index: 2;
-      color: rgba(#fff,.8);
+      padding-top: 20px;
+      opacity: 1;
+      transition: 0.5s;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
-    
     .title {
-      color: rgba(#fff,.7);
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      font-size: 18px;
-      font-weight: 300;
-      box-sizing: border-box;
-      padding: 30px 10px;
-      background: linear-gradient(to top, #000, transparent);
-      text-transform: uppercase;
-      text-align: center;
-      opacity: 0;
-      transition: .5s;
-    }
-  
-    .hvr-radial-out {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: inline-block;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-      overflow: hidden;
-      border-radius: 10px;
-      i {
-        font-size: 50px;
-        color: #e6e6e6;
-        width: 50px;
-        position: absolute;
-        top: calc(50% - 50px);
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        opacity: 0;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-      }
-      .time {
-        font-size: 12px;
-        color: #fff;
-        width: 100%;
-        text-align: center;
-        position: absolute;
-        top: calc(50% - 0px);
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        opacity: 0;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-      }
-    }
-  
-    .hvr-radial-out:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      right: 0px;
-      margin: 0px auto;
-      background: rgba(81, 73, 73, 0.2);
-      border-radius: 50%;
-      transform: scale(0, 0);
-      transition: all 0.3s ease-in-out;
-      width: 100%;
-      height: 100%;
+      padding-bottom: 50px;
+      opacity: 1;
+      transition: 0.5s;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
 
-  
+  .info {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0;
+    background: linear-gradient(to bottom, #393333, transparent);
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 2;
+    color: rgba(#fff, 0.8);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .year,
+  .rating {
+    padding: 0px 10px;
+  }
+
+  .title {
+    color: rgba(#fff, 0.7);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 18px;
+    font-weight: 300;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    background: linear-gradient(to top, #393333, transparent);
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+  }
+}
+
+/* to center the cards*/
+@media (width < 478px) {
+  #parent-container {
+    justify-content: center;
+  }
+}
+/* to center the cards*/
+
+/* End Cards */
+
+/* the arrow button to go up  */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#myFloatingButton {
+  background-color: #ba2626;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/*arrow*/
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* if you wanna use the animition just import the file and use the .bounce class in the tag  */
+.bounce {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+/* the arrow button to go up  */
